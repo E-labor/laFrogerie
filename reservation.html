@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,700italic,400italic' rel='stylesheet' type='text/css'>
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="main-wrapper">
+            <!-- HEADER -->
+            <div class="header-wrapper">
+                <header class="clearfix">
+                    <nav class="menu left">
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li>
+                                <a href="#">Nos prestations</a>
+                                <ul class="sub-menu">
+                                    <li><a href="chambres.html">Chambres d'hôtes</a></li>
+                                    <li><a href="table-hotes.html">Table d'hôtes</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Le domaine</a>
+                                <ul class="sub-menu">
+                                    <li><a href="chateau.html">Le château et son parc</a></li>
+                                    <li><a href="chambres.html">Les chambres</a></li>
+                                    <li><a href="table-hotes.html">La table d'hôtes</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="Château La Frogerie">
+                            <p>Château La Frogerie</p>
+                        </a>
+                    </h1>
+                    <nav class="menu right">
+                        <ul>
+                            <li><a href="reservation.html">Réservation</a></li>
+                            <li><a href="infos-pratiques.html">Infos pratiques</a></li>
+                            <li><a href="activites.html">Activités</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <!-- END HEADER -->
+
+            <!-- PATTERN BANNER -->
+            <div class="pattern-banner"></div>
+            <!-- END PATTERN BANNER -->
+
+            <!-- MAIN CONTENT -->
+            <div class="main-content-wrapper">
+                <div class="main-content-box clearfix">
+
+                    <header>
+                        <h1>Réservation</h1>
+                    </header>
+
+                    <span class="separator"></span>
+
+                    <section class="booking-layout clearfix">
+                        
+                        <!-- BOOKING FORM -->
+                        <article class="column two-thirds booking-form">
+                            <form action="" method="post">
+                                <fieldset>
+                                    <legend>Votre réservation</legend>
+                                    <div>
+                                        <label for="arrival">Arrivée</label>
+                                        <input type="text" name="arrival" id="arrival">
+                                    </div>
+                                    <div>
+                                        <label for="departure">Départ</label>
+                                        <input type="text" name="departure" id="departure">
+                                    </div>
+                                    <div>
+                                        <label for="nbre">Nombre de personnes</label>
+                                        <select name="nbre">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="room-choice">Votre choix de chambre</label>
+                                        <select name="room-choice">
+                                            <option value="1">Chambre St Malo</option>
+                                            <option value="2">Chambre Pondicherry</option>
+                                            <option value="3">Suite Vendôme</option>
+                                            <option value="4">Chambre d'Orléans</option>
+                                        </select>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Vos coordonnées</legend>
+                                    <div>
+                                        <label for="name">Votre nom</label>
+                                        <input type="text" name="name" id="name">
+                                    </div>
+                                    <div>
+                                        <label for="email">Votre email</label>
+                                        <input type="email" name="email" id="email">
+                                    </div>
+                                    <div>
+                                        <label for="phone-number">Votre téléphone</label>
+                                        <input type="text" name="phone" id="phone-number">
+                                    </div>
+                                    <div>
+                                        <label for="subject">Sujet</label>
+                                        <input type="text" name="subject" id="subject">
+                                    </div>
+                                    
+                                    <label for="message">Votre message</label>
+                                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Vos services supplémentaires</legend>
+                                    <input type="checkbox" name="" id="">
+                                    <label for="">Transfert depuis la gare de cholet</label> <br/>
+                                    <input type="checkbox" name="" id="">
+                                    <label for="">Location de voiture</label> <br/>
+                                    <input type="checkbox" name="" id="">
+                                    <label for="">Lit supplémentaire</label> <br/>
+                                </fieldset>
+
+                                <fieldset>
+                                    <input type="checkbox" name="confirm-terms" id="confirm-terms">
+                                    <label for="confirm-terms">J'ai lu et j'accepte les conditions générales d'utilisation</label>                                  
+                                    <button class="button dark">Envoyer</button>
+                                </fieldset>
+                            </form>
+                        </article>
+                        <!-- BOOKING FORM -->
+                        
+
+                        <!-- CONDITIONS & TERMS -->
+                        <article class="column third">
+                            <h2>Conditions</h2>
+
+                            <h4>Annulation</h4>
+                            <p>
+                                Cu accumsan ponderum his, numquam suscipiantur ius ut, ea tota choro sadipscing duo. Eu fugit indoctum pro, illum solet tation id sea. At legere complectitur eos, eos at nostrud aliquam, ea vel hinc veniam corpora. Ad doctus mentitum moderatius vim, pri vero ancillae platonem no.
+                            </p>
+
+                            <h4>Enfants et lits supplémentaires</h4>
+                            <p>
+                                Cu accumsan ponderum his, numquam suscipiantur ius ut, ea tota choro sadipscing duo. Eu fugit indoctum pro, illum solet tation id sea. At legere complectitur eos, eos at nostrud aliquam, ea vel hinc veniam corpora. Ad doctus mentitum moderatius vim, pri vero ancillae platonem no.
+                            </p>
+
+                            <h4>Taxes</h4>
+                            <p>
+                                Cu accumsan ponderum his, numquam suscipiantur ius ut, ea tota choro sadipscing duo. Eu fugit indoctum pro, illum solet tation id sea. At legere complectitur eos, eos at nostrud aliquam, ea vel hinc veniam corpora. Ad doctus mentitum moderatius vim, pri vero ancillae platonem no.
+                            </p>
+                        </article>
+                        <!-- CONDITIONS & TERMS -->
+                        
+                    </section>
+
+                </div>
+            </div>
+            <!-- END MAIN CONTENT -->
+
+            <!-- FOOTER -->
+            <div class="footer-wrapper">
+                <footer>
+                    <p>2014 © chateau-la-frogerie.com</p>
+                    <ul class="social-links">
+                        <li><a href="#" class="twitter"></a></li>
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="google"></a></li>
+                        <li><a href="#" class="flickr"></a></li>
+                    </ul>
+                    <ul class="help-links">
+                        <li><a href="">CGV</a></li>
+                        <li><a href="">Plan du site</a></li>
+                        <li><a href="">Mentions légales</a></li>
+                    </ul>
+                </footer>
+            </div>
+            <!-- END FOOTER -->
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
