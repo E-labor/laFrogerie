@@ -889,30 +889,6 @@ th {
     width: 200px;
     margin: 10px 95px 20px 0;
 }
-/*.contact-form div:nth-child(2n) {
-    margin-right: 0;
-}
-.contact-form label {
-    display: block;
-    color: #292929;
-}
-.contact-form input, .contact-form textarea  {
-    background-color: #f3f3f3;
-    border: 1px solid #292929;
-    padding: 0 0 0 5px;
-    width: 100%;
-}
-.contact-form input {
-    height: 30px;
-    line-height: 30px; 
-}
-.contact-form .button {
-    float: right;
-    margin: 20px 0;
-    padding: 5px 35px;
-    font-variant: small-caps;
-    font-weight: bold;
-}*/
 .contact-layout ul {
     list-style-type: none;
     padding: 0;
@@ -974,12 +950,6 @@ th {
     font-size: 16px;
     font-size: 1.6rem;
 }
-
-
-
-
-
-
 
 
 /*-------------------------------------------------------------------------------------------------------
@@ -1094,8 +1064,39 @@ th {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+/* ===== == = === 20em (320px) === = == ===== */
 
+@media only screen and (min-width : 20em) {
+}
+
+/* ===== == = === 30em (480px) === = == ===== */
+
+@media only screen and (min-width : 30em) {
+}
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: 37.5em) {
+}
+
+/* ===== == = === 48em (768px) === = == ===== */
+
+@media only screen and (min-width : 48em) {
+}
+
+/* ===== == = === 56.25em (900px) === = == ===== */
+
+@media only screen and (min-width : 56.25em) {
+}
+
+/* ===== == = === 68.75em (1100px) === = == ===== */
+
+@media only screen and (min-width : 68.75em) {
+}
+
+/* ===== == = === 81.25em (1300px) === = == ===== */
+
+@media only screen and (min-width : 81.25em) {
 }
 
 @media print,
