@@ -15,6 +15,7 @@
         <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,700,700italic,400italic' rel='stylesheet' type='text/css'>
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/matchMedia.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -47,7 +48,7 @@
                     </nav>
                     <h1 class="logo">
                         <a href="index.html">
-                            <img src="img/logo.png" alt="Château La Frogerie">
+                            <img src="img/logo.svg" alt="Château La Frogerie">
                             <p>Château La Frogerie</p>
                         </a>
                     </h1>
@@ -64,8 +65,8 @@
 
             <!-- SLIDER -->
             <div class="slider-wrapper">
-                <section class="bx-slider clearfix"><img src="img/slider.png"></section>
-                <section class="reservation-banner"><p>Réservations : (+33) 02 41 29 13 92 ou réserver en ligne <a href="reservation.html">Réserver</a></p></section>
+                <section class="slider"><img src="img/slider.png"></section>
+                <section class="reservation-banner"><p>Réservations : <a href="tel://+33-02-41-49-13-92">(+33) 02 41 29 13 92</a> ou réserver en ligne <a href="reservation.html" class="book-now">Réserver</a></p></section>
             </div>
             <!-- END SLIDER -->
 
@@ -184,7 +185,7 @@
             <!-- END FOOTER -->
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>
 
         <script src="js/plugins.js"></script>

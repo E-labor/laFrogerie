@@ -15,6 +15,34 @@ $(document).ready(function() {
         });
     }
 
+    // responsive menu
+    var $mainNav = $('.menu').children('ul');
+    var mobileNav = $('<ul></ul>').appendTo('.header-wrapper header').wrap('<nav class="mobile-nav"></nav>');
+
+    $mainNav.find('li').each(function() {
+        var level = $(this).parents('ul').length;
+        if (level < 2) {
+            $(this).clone().appendTo(mobileNav);
+        }
+    });
+
+    $('body').addClass('js');
+    var $menu = $('#menu'),
+        $menulink = $('.menu-link'),
+        $menuTrigger = $('.has-submenu > a');
+
+    $menulink.click(function(e) {
+        e.preventDefault();
+        $menulink.toggleClass('active');
+        $menu.toggleClass('active');
+    });
+
+    $menuTrigger.click(function(e) {
+        e.preventDefault();
+        var $this = $(this);
+        $this.toggleClass('active').next('ul').toggleClass('active');
+    });
+
 
 
 
@@ -63,8 +91,9 @@ $(document).ready(function() {
 
     // Get Flickr feed
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=45702874@N08&format=json&jsoncallback=?", function(data) {
-        var target = ".flickr-feed";
-        for (i = 0; i <= 8; i = i + 1) {
+        var target = ".flickr-feed",
+            itemNum = 8;
+        for (i = 0; i <= itemNum; i = i + 1) {
             var pic = data.items[i];
             var liNumber = i + 1;
             $(target).append("<li class='flickr-image no-" + liNumber + "'><a title='" + pic.title + "' href='" + pic.link + "'><img src='" + pic.media.m + "' /></a></li>");
