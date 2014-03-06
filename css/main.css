@@ -250,7 +250,7 @@ th {
 }
 .tab-nav li a:hover,
 .tab-nav li a:focus, 
-.tab-nav li a.active {
+.tab-nav li a.selected {
   border: 1px solid #d2ae7e;
   border-bottom: none;
   outline: none;
@@ -459,7 +459,6 @@ th {
     font-size: 1.6rem;
 }
 .sub-menu {
-    /*display: none;*/
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -510,6 +509,19 @@ th {
     opacity: 1;
     visibility: visible;
     top: 15px;
+}
+/*-- for responsive menu --*/
+.menu-link, .menu-link:focus {
+    display: none;
+    float: right;
+    text-decoration: none;
+    padding: 20px 10px;
+    background-color: #bf9958;
+    color: #fff;
+    outline: none;
+}
+.mobile-nav {
+    display: none;
 }
 
 /*-------------------------------------------------------------------------------------------------------
@@ -1104,10 +1116,10 @@ th {
    Media Queries
    ========================================================================== */
 
-/* Large Devices, Wide Screens 81.25em (1300px) */
+/* Large Devices, Wide Screens 81.25em (1300px) 
 @media only screen and (max-width : 81.25em) {
 
-}
+}*/
 
 /* Medium Devices, Desktops 62em (992px) */
 @media only screen and (max-width : 62em) {
@@ -1185,6 +1197,7 @@ th {
     .main-content-wrapper:before, .main-content-wrapper:after {
         left: 315px;
     }
+    /*--- flickr feed ---*/
     .flickr-image.no-7, .flickr-image.no-8, .flickr-image.no-9 {
         display: none;
     }
@@ -1222,14 +1235,6 @@ th {
 
 /* Small Devices, Tablets 48em (768px) */
 @media only screen and (max-width : 48em) {
-    body {
-        font-size: 12px;
-        font-size: 1.2rem;
-    }
-    h1 {
-        font-size: 24px;
-        font-size: 2.4rem;
-    }
     h2 {
         font-size: 18px;
         font-size: 1.8rem;
@@ -1247,67 +1252,103 @@ th {
     -------------------------------*/
     /*--- header ---*/
     .header-wrapper header {
-        width: 440px;
+        width: 100%;
+        height: auto;
     }
     /*-- logo --*/
+    .logo {
+        float: left;
+        width: 200px;
+        margin: 5px auto 0;
+    }
     .logo img {
-        width: 80px;
+        width: 60px;
+        float: left;
     }
     .logo a p {
-       font-size: 12px;
-       font-size: 1.2rem;
-       margin: 0.5rem 0;
+       font-weight: 700;
+       margin: 0.5rem;
+       display: inline-block;
     }
     /*-- menu --*/
+    .menu {
+        display: none;
+    }
+    .menu-link, .menu-link:focus {
+        display: block;
+    }
     .mobile-nav {
+        display: block;
         position: static;
-        float: left;
-        margin-left: 0;
-        width: 60%;
+        float: none;
+        width: 100%;
     }
-    .mobile-nav ul {
-        padding: 0;
+    .mobile-nav, .mobile-nav > ul ul {
+        overflow: hidden;
+        max-height: 0;
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
     }
-    .mobile-nav li {
+    .mobile-nav ul, .mobile-nav li{
         padding: 0;
         margin: 0;
     }
-    .mobile-nav li a, .mobile-nav a:hover{
+    .mobile-nav li a{
+        position: relative;
         display: block;
         padding: 5px;
         background-color: #292929;
         border-bottom: 1px solid #d2ae7e;
-        /*border-top: 1px solid #bf9958;*/
         text-decoration: none;
         font-variant: small-caps;
         color: #9d7653;
         font-size: 16px;
         font-size: 1.6rem;
     }
-    /*.menu {
-        position: static;
-        float: left;
-        margin-left: 0;
-        width: 60%;
-    }*/
+    .mobile-nav li:first-child a {
+        border-top: 1px solid #d2ae7e;
+    }
+    .mobile-nav li.has-submenu > a:after {
+        content: '+';
+        position: absolute;
+        top: 0;
+        right: 5px;
+        display: inline-block;
+        font-size: 26px;
+        font-size: 2.6rem;
+        line-height: 32px;
+        line-height: 3.2rem;
+    }
+    .mobile-nav li.has-submenu > a.active:after {
+        content: "-";
+    }
+    .mobile-sub-menu li a {
+        background-color: #424242;
+    }
+    .mobile-sub-menu li:first-child a {
+        border-top: none;
+    }
+    /* ative menu */
+    .mobile-nav.active, .mobile-nav > ul ul.active {
+        max-height: 55em;
+    }
 
     /*-------------------------------
     SLIDER
     -------------------------------*/
     /*--- slider ---*/
-    .slider, .slider img {
-        width: 100%;
-        height: auto;
-    }
-    .slider:before, .slider:after {
-        display: none;
+    .reservation-banner p {
+        font-size: 12px;
+        font-size: 1.2rem;
     }
     /*-------------------------------
     MAIN CONTENT
     -------------------------------*/
-    .border-img >img {
+    .border-img {
         width: 100%;
-        height: auto;
     }
     .separator {
         width: 321px;
@@ -1320,48 +1361,154 @@ th {
     .main-content-wrapper:before, .main-content-wrapper:after {
         left: 165px;
     }
-    .flickr-image.no-9 {
-        display: none;
+    /*--- flickr feed ---*/
+    .flickr-image.no-7, .flickr-image.no-8, .flickr-image.no-9 {
+        display: inline-block;
+    }
+    .flickr-feed img {
+        width: 90px;
+        height: 90px;
     }
     /*--- weather icons ---*/
-    .w-icon, .weather-details li span {
-        display: block;
+    .w-icon {
+        float: left;
     }
     .weather-details li {
-        width: 33%;
         margin: 15px 0 0;
     }
     .weather-details li span {
-        float: none;
-        text-align: center;
+        display: inline-block;
     }
     .forecast-weather li, .forecast-weather li:first-child {
-        margin: 0;
-        padding: 0;
-        width: 33.3%;
+        padding: 0 10px;
     }
     .forecast-weather li span:after {
-        display: none;
-    }
-    .forecast-weather li p {
-        width: 100%;
+        display: inline-block;
     }
     /*-------------------------------
     FOOTER
     -------------------------------*/
     .footer-wrapper footer {
         width: 440px;
+        height: auto;
+    }
+    .footer-wrapper p {
+        display: block;
+        text-align: center;
+        position: static;
+        padding: 5px 0;
+    }
+    .help-links {
+        display: table;
+        position: static;
+        margin: 0 auto;
     }
 }
 
-/* Small Devices, Tablets 37.5em (600px) */
+/* Small Devices, Tablets 37.5em (600px) 
 @media only screen and (max-width: 37.5em) {
 
-}
+}*/
 
 /* Extra Small Devices, Phones 30em (480px) */ 
 @media only screen and (max-width : 30em) {
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+    }
+    h1 {
+        font-size: 22px;
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+    h4, h5, h6 {
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+     /*-------------------------------
+    HEADER
+    -------------------------------*/
+    /*-- logo --*/
+    .logo img {
+        width: 50px;
+    }
+     /*-- menu --*/
+    .menu-link, .menu-link:focus {
+        padding: 15px 7px;
+    }
+     /*-------------------------------
+    SLIDER
+    -------------------------------*/
+    /*--- slider ---*/
+    .reservation-banner p {
+        text-align: center;
+        padding: 5px 0;
+    }
+    .reservation-banner p a {
+        display: block;
+        margin: 5px auto;
+    }
+    /*-------------------------------
+    MAIN CONTENT
+    -------------------------------*/
+    .separator {
+        width: 171px;
+    }
+    
+    /*--- main content ---*/
+    .main-content-wrapper {
+        width: 290px;
+    }
+    .main-content-wrapper:before, .main-content-wrapper:after {
+        left: 90px;
+    }
+    .hp-main-blocks .button {
+        float: none;
+        display: table;
+        margin: 0 auto;
+    }
+    /*--- flickr feed ---*/
+    .flickr-feed img {
+        width: 65px;
+        height: 65px;
+    }
+    .flickr-image.no-9 {
+        display: none;
+    }
+    /*--- weather icons ---*/
+    .w-icon {
+        float: none;
+        display: table;
+        margin: 0 auto;
+    }
+    .current-weather div {
+        display: table;
+        margin: 0 auto;
+    }
+    .current-weather h3 {
+        display: block;
+    }
+    .weather-details li span {
+        display: block;
+    }
+    .forecast-weather li, .forecast-weather li:first-child {
+        width: 100%;
+        border-left: none;
+        padding: 5px 10px;
+    }
+    .forecast-weather li figure {
+        margin: 0 10px 0 30px;
+    }
 
+    /*-------------------------------
+    FOOTER
+    -------------------------------*/
+    .footer-wrapper footer {
+        width: 290px;
+        height: auto;
+    }
 }
 
 /* Custom, iPhone Retina 20em (320px) */ 

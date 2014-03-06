@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // desktop dropdown menu if css transitions not supported
+    /////// desktop dropdown menu if css transitions not supported
     if (!Modernizr.csstransitions) {
         $('.menu li').hover(function() {
             $(this).children('.sub-menu').css("visibility", "visible").stop().animate({
@@ -15,9 +15,11 @@ $(document).ready(function() {
         });
     }
 
-    // responsive menu
+    ////// responsive menu
+
+    // rebuild the nav
     var $mainNav = $('.menu').children('ul');
-    var mobileNav = $('<ul></ul>').appendTo('.header-wrapper header').wrap('<nav class="mobile-nav"></nav>');
+    var mobileNav = $('<ul></ul>').appendTo('.header-wrapper header').wrap('<nav class="mobile-nav" id="mobile-menu"></nav>');
 
     $mainNav.find('li').each(function() {
         var level = $(this).parents('ul').length;
@@ -26,8 +28,13 @@ $(document).ready(function() {
         }
     });
 
+    mobileNav.find('.sub-menu').closest('li').addClass('has-submenu');
+    mobileNav.find('.sub-menu').removeClass('sub-menu').addClass('mobile-sub-menu');
+
+    // mobile dropdown
     $('body').addClass('js');
-    var $menu = $('#menu'),
+
+    var $menu = $('#mobile-menu'),
         $menulink = $('.menu-link'),
         $menuTrigger = $('.has-submenu > a');
 
@@ -46,7 +53,7 @@ $(document).ready(function() {
 
 
 
-    // Tabs to accordion
+    //////// Tabs to accordion
     var Tabs = {
 
         el: {
@@ -63,7 +70,7 @@ $(document).ready(function() {
             Tabs.el.nav
                 .on(
                     'click',
-                    'li > a:not(.active)',
+                    'li > a:not(.selected)',
                     function(event) {
                         Tabs.deactivateAll();
                         Tabs.activateTab(event);
@@ -73,13 +80,13 @@ $(document).ready(function() {
         },
 
         deactivateAll: function() {
-            Tabs.el.tabs.removeClass("active");
+            Tabs.el.tabs.removeClass("selected");
             Tabs.el.panels.removeClass("is-open");
         },
 
         activateTab: function(event) {
             $(event.target)
-                .addClass("active")
+                .addClass("selected")
                 .next()
                 .addClass("is-open");
         }
@@ -89,7 +96,7 @@ $(document).ready(function() {
     Tabs.init(); // init the tabs
 
 
-    // Get Flickr feed
+    ////////// Get Flickr feed
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=45702874@N08&format=json&jsoncallback=?", function(data) {
         var target = ".flickr-feed",
             itemNum = 8;
@@ -101,7 +108,7 @@ $(document).ready(function() {
     });
 
 
-    // Get weather from Yahoo api 
+    ///////// Get weather from Yahoo api 
     var DEG = "c",
         wQuery = 'select * from weather.forecast where woeid=610555 and u="' + DEG + '"',
         weatherYQL = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(wQuery) + '&format=json&callback=?';
