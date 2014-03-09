@@ -3,14 +3,14 @@ $(document).ready(function() {
     /////// desktop dropdown menu if css transitions not supported
     if (!Modernizr.csstransitions) {
         $('.menu li').hover(function() {
-            $(this).children('.sub-menu').css("visibility", "visible").stop().animate({
+            $(this).children('.sub-menu').css('visibility', 'visible').stop().animate({
                 opacity: 1,
-                top: "15px"
+                top: '15px'
             }, 200);
         }, function() {
-            $(this).children('.sub-menu').css("visibility", "hidden").stop().animate({
+            $(this).children('.sub-menu').css('visibility', 'hidden').stop().animate({
                 opacity: 0,
-                top: "34px"
+                top: '34px'
             }, 200);
         });
     }
@@ -57,9 +57,9 @@ $(document).ready(function() {
     var Tabs = {
 
         el: {
-            nav: $(".tab-nav"),
-            tabs: $(".tab-nav > li > a"),
-            panels: $(".tab-nav > li > section")
+            nav: $('.tab-nav'),
+            tabs: $('.tab-nav > li > a'),
+            panels: $('.tab-nav > li > section')
         },
 
         init: function() {
@@ -80,15 +80,15 @@ $(document).ready(function() {
         },
 
         deactivateAll: function() {
-            Tabs.el.tabs.removeClass("selected");
-            Tabs.el.panels.removeClass("is-open");
+            Tabs.el.tabs.removeClass('selected');
+            Tabs.el.panels.removeClass('is-open');
         },
 
         activateTab: function(event) {
             $(event.target)
-                .addClass("selected")
+                .addClass('selected')
                 .next()
-                .addClass("is-open");
+                .addClass('is-open');
         }
 
     };
@@ -98,23 +98,23 @@ $(document).ready(function() {
 
     ////////// Get Flickr feed
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=45702874@N08&format=json&jsoncallback=?", function(data) {
-        var target = ".flickr-feed",
+        var target = '.flickr-feed',
             itemNum = 8;
         for (i = 0; i <= itemNum; i = i + 1) {
             var pic = data.items[i];
             var liNumber = i + 1;
-            $(target).append("<li class='flickr-image no-" + liNumber + "'><a title='" + pic.title + "' href='" + pic.link + "'><img src='" + pic.media.m + "' /></a></li>");
+            $(target).append('<li class="flickr-image no-' + liNumber + '"><a title="' + pic.title + '" target="_blank" href="' + pic.link + '"><img src="' + pic.media.m + '" /></a></li>');
         }
     });
 
 
     ///////// Get weather from Yahoo api 
-    var DEG = "c",
+    var DEG = 'c',
         wQuery = 'select * from weather.forecast where woeid=610555 and u="' + DEG + '"',
         weatherYQL = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(wQuery) + '&format=json&callback=?';
 
-    var enDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        frDays = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+    var enDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        frDays = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 
     var weatherIconMap = [
         'tornado',
@@ -205,7 +205,7 @@ $(document).ready(function() {
 
 
         } else {
-            $('.current-weather div').html("Erreur pas de données météo disponibles");
+            $('.current-weather div').html('Erreur pas de données météo disponibles');
         }
     });
 

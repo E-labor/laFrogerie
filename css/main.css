@@ -232,12 +232,12 @@ th {
     text-align: center;
 }
 
-/*--- tabs ---*/
+/*--- accordion to tabs 1° accodion, 2° tabs ---*/
 .tab-nav {
   padding: 0;
   list-style: none;
   margin: 3rem 0 0;
-  width: 80%;
+  width: 100%;
 }
 .tab-nav > li > a {
   display: block;
@@ -247,6 +247,7 @@ th {
   text-decoration: none;
   background-color: #2b2b2b;
   color: #fff;
+  cursor: pointer;
 }
 .tab-nav li a:hover,
 .tab-nav li a:focus, 
@@ -274,7 +275,7 @@ th {
 .tab-nav section li {
     display: block;
 }
-@media (min-width: 30em) { 
+@media (min-width: 48em) { 
    .tab-nav {
     width: 100%; 
     position: relative; 
@@ -539,7 +540,7 @@ th {
     position: relative;
 }
 .slider:before, .slider:after {
-    width: 170px;
+    width: 10%;
     height: 355px;
     display: inline-block;
     position: absolute;
@@ -547,9 +548,9 @@ th {
     content: "";
 }
 .slider:before {
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = 'transparent', endColorstr = '#000000');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = 'transparent', endColorstr = '#000000')";
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 75);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = 'transparent', endColorstr = '#000000');
     filter: alpha(opacity = 75);
     background-image: -moz-linear-gradient(left, transparent, rgba(0,0,0,.6));
     background-image: -ms-linear-gradient(left, transparent, rgba(0,0,0,.6));
@@ -557,12 +558,12 @@ th {
     background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(0,0,0,.6)));
     background-image: -webkit-linear-gradient(left, transparent, rgba(0,0,0,.6));
     background-image: linear-gradient(left, transparent, rgba(0,0,0,.6));
-    left: -170px;
+    left: -10%;
 }
 .slider:after {
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#000000', endColorstr = 'transparent');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#000000', endColorstr = 'transparent')";
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 75);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = '#000000', endColorstr = 'transparent');
     filter: alpha(opacity = 75);
     background-image: -moz-linear-gradient(left, rgba(0,0,0,.6), transparent);
     background-image: -ms-linear-gradient(left, rgba(0,0,0,.6), transparent);
@@ -570,7 +571,7 @@ th {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,.6)), to(transparent));
     background-image: -webkit-linear-gradient(left, rgba(0,0,0,.6), transparent);
     background-image: linear-gradient(left, rgba(0,0,0,.6), transparent);
-    right: -170px;
+    right: -10%;
 }
 /*--- reservation banner ---*/
 .reservation-banner {
@@ -1116,10 +1117,12 @@ th {
    Media Queries
    ========================================================================== */
 
-/* Large Devices, Wide Screens 81.25em (1300px) 
-@media only screen and (max-width : 81.25em) {
-
-}*/
+/* Large Devices, Wide Screens 71.25em (1140px)*/ 
+@media only screen and (max-width : 71.25em) {
+    .slider:before, .slider:after {
+        display: none;
+    }
+}
 
 /* Medium Devices, Desktops 62em (992px) */
 @media only screen and (max-width : 62em) {
@@ -1197,6 +1200,9 @@ th {
     .main-content-wrapper:before, .main-content-wrapper:after {
         left: 315px;
     }
+    /*-------------------------------
+    HOME PAGE
+    -------------------------------*/
     /*--- flickr feed ---*/
     .flickr-image.no-7, .flickr-image.no-8, .flickr-image.no-9 {
         display: none;
@@ -1225,6 +1231,34 @@ th {
         width: 100%;
     }
     /*-------------------------------
+    ROOMS PAGE
+    -------------------------------*/
+    .rooms-blocks .button.gold, .rooms-blocks .button.dark {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0;
+    }
+    .rooms-blocks .button.gold {
+        float: left;
+        margin: 10px 0 0;
+    }
+    /*-------------------------------
+    SINGLE ROOM PAGE
+    -------------------------------*/
+    .carousel, .carousel img, .tab-nav img, .booking-cal img {
+        width: 100%;
+        height: auto;
+    }
+    .booking-cal select {
+        float: none;
+    }
+    .room-layout .column.two-thirds {
+        padding-right: 2rem;
+    }
+    .booking-cal {
+        margin: 3em 0;
+    }
+    /*-------------------------------
     FOOTER
     -------------------------------*/
     .footer-wrapper footer {
@@ -1233,8 +1267,8 @@ th {
     
 }
 
-/* Small Devices, Tablets 48em (768px) */
-@media only screen and (max-width : 48em) {
+/* Small Devices, Tablets 47.5em (767px) */
+@media only screen and (max-width : 47.5em) {
     h2 {
         font-size: 18px;
         font-size: 1.8rem;
@@ -1300,7 +1334,7 @@ th {
         position: relative;
         display: block;
         padding: 5px;
-        background-color: #292929;
+        background-color: #1c1c1c;
         border-bottom: 1px solid #d2ae7e;
         text-decoration: none;
         font-variant: small-caps;
@@ -1326,7 +1360,7 @@ th {
         content: "-";
     }
     .mobile-sub-menu li a {
-        background-color: #424242;
+        background-color: #292929;
     }
     .mobile-sub-menu li:first-child a {
         border-top: none;
@@ -1361,6 +1395,12 @@ th {
     .main-content-wrapper:before, .main-content-wrapper:after {
         left: 165px;
     }
+    .main-content-box {
+        padding: 20px;
+    }
+    /*-------------------------------
+    HOME PAGE
+    -------------------------------*/
     /*--- flickr feed ---*/
     .flickr-image.no-7, .flickr-image.no-8, .flickr-image.no-9 {
         display: inline-block;
@@ -1384,6 +1424,22 @@ th {
     }
     .forecast-weather li span:after {
         display: inline-block;
+    }
+    /*-------------------------------
+    ROOMS PAGE
+    -------------------------------*/
+    .rooms-blocks .column.half:first-child, .rooms-blocks .column.half {
+        padding: 0 1rem;
+        margin: 2rem auto 0;
+    }
+    /*-------------------------------
+    SINGLE ROOM PAGE
+    -------------------------------*/
+    .room-layout .column.two-thirds {
+        padding-right: 0;
+    }
+    .booking-cal .button.gold {
+        width: 100%;
     }
     /*-------------------------------
     FOOTER
@@ -1464,6 +1520,9 @@ th {
     .main-content-wrapper:before, .main-content-wrapper:after {
         left: 90px;
     }
+    /*-------------------------------
+    HOME PAGE
+    -------------------------------*/
     .hp-main-blocks .button {
         float: none;
         display: table;
