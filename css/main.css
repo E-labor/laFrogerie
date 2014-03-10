@@ -78,8 +78,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
 h1 {
-    font-size: 28px;
-    font-size: 2.8rem;
+    font-size: 24px;
+    font-size: 2.4rem;
 }
 h2 {
     font-size: 22px;
@@ -1084,11 +1084,7 @@ th {
 .social-links .flickr:hover {
     background-image: url(../img/flickr-gold.svg);
 }
-/*.social-links li img {
-    display: inline-block;
-    width: 20px;
-    margin: auto;
-}*/
+
 .help-links {
     list-style-type: none;
     padding: 0;
@@ -1131,16 +1127,25 @@ th {
         font-size: 1.2rem;
     }
     h1 {
-        font-size: 24px;
-        font-size: 2.4rem;
+        font-size: 22px;
+        font-size: 2.2rem;
     }
     h2 {
         font-size: 18px;
         font-size: 1.8rem;
     }
     h3 {
+        font-size: 16px;
+        font-size: 1.6rem;
+    }
+    h4, h5, h6 {
         font-size: 14px;
         font-size: 1.4rem;
+    }
+    /*--- forms ---*/
+    .column.two-thirds fieldset div {
+        width: 180px;
+        margin: 10px 10px 20px 0;
     }
     /*-------------------------------
     HEADER
@@ -1259,6 +1264,34 @@ th {
         margin: 3em 0;
     }
     /*-------------------------------
+    INFOS PAGE
+    -------------------------------*/
+    .infos-layout iframe {
+        width: 100%;
+        height: auto;
+    }
+    .infos-layout .column.full {
+        padding: 0;
+    }
+    .contact-layout .column.two-thirds {
+        padding-right: 1rem;
+    }
+    .contact-layout .column.two-thirds fieldset div {
+        margin: 10px 40px 20px 0;
+    }
+    .contact-layout .column.two-thirds form div:nth-of-type(2n) {
+        margin-right: 0;
+    }
+    /*-------------------------------
+    BOOKING PAGE 
+    -------------------------------*/
+    .booking-layout .column.two-thirds {
+        padding-right: 1rem;
+    }
+    .booking-layout .column.third {
+        padding-left: 2rem;
+    }
+    /*-------------------------------
     FOOTER
     -------------------------------*/
     .footer-wrapper footer {
@@ -1269,18 +1302,22 @@ th {
 
 /* Small Devices, Tablets 47.5em (767px) */
 @media only screen and (max-width : 47.5em) {
-    h2 {
-        font-size: 18px;
-        font-size: 1.8rem;
-    }
-    h3 {
-        font-size: 14px;
-        font-size: 1.4rem;
-    }
+
     /*--- layout ---*/
     .column { float: left; padding-left: 1rem; padding-right: 1rem; }
     .column.full, .column.two-thirds, .column.half, .column.third, .column.fourth, .column.flow-opposite { width: 100%; }
 
+    /*--- forms ---*/
+    .column.two-thirds fieldset div {
+        width: 100%;
+        margin: 10px 0 20px;
+    }
+    .column.two-thirds form .button {
+        display: table;
+        float: none;
+        margin: 20px auto 0;
+        width: 80%;
+    }
     /*-------------------------------
     HEADER
     -------------------------------*/
@@ -1386,6 +1423,9 @@ th {
     }
     .separator {
         width: 321px;
+        display: table;
+        float: none;
+        margin: 2em auto;
     }
     
     /*--- main content ---*/
@@ -1442,6 +1482,75 @@ th {
         width: 100%;
     }
     /*-------------------------------
+    RESTAURANT PAGE
+    -------------------------------*/
+    .table-layout .column.two-thirds {
+        padding-right: 0;
+    }
+    /*-------------------------------
+    INFOS PAGE
+    -------------------------------*/
+    .infos-layout h3 {
+        text-align: center;
+    }
+    .infos-layout h4, .contact-layout h4 {
+        border-top: 1px solid #D2AE7E;
+        padding: 5px 0 0;
+    }
+    .infos-layout .column.two-thirds, .contact-layout .column.two-thirds {
+        border-right: none;
+        padding-right: 0;
+    }
+    .infos-layout .column.third, .contact-layout .column.third {
+        padding-left: 0;
+    }
+    .direction-form p:before {
+        margin: -8px 5px 0 0;
+    }
+    .direction-form input, .direction-form .button {
+        display: table;
+        width: 80%;
+    }
+    .direction-form .button {
+        margin: 0 auto;
+    }
+    .column.contact-form fieldset div {
+        width: 100%;
+    }
+    .column.contact-form .button {
+        width: 100%;
+    }
+    /*-------------------------------
+    CLASSIC POST PAGE
+    -------------------------------*/
+    .classic-layout h3 {
+        width: 85%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+    .classic-layout p, .classic-layout ul {
+        margin: 1rem auto;
+        width: 100%;
+        float: none;
+    }
+    .classic-layout ul {
+        padding-left: 10px;
+    }
+    .classic-layout img.alignleft, .classic-layout img.alignright {
+        width: 100%;
+    }
+    /*-------------------------------
+    BOOKING PAGE 
+    -------------------------------*/
+    .booking-layout .column.two-thirds {
+        padding-right: 0;
+        border-right: none;
+    }
+    .booking-layout .column.third {
+        padding-left: 0;
+        border-top: 1px solid #D2AE7E;
+    }
+    /*-------------------------------
     FOOTER
     -------------------------------*/
     .footer-wrapper footer {
@@ -1472,16 +1581,27 @@ th {
         text-align: center;
     }
     h1 {
-        font-size: 22px;
-        font-size: 2.2rem;
+        font-size: 18px;
+        font-size: 1.8rem;
+        margin: 0;
     }
     h2 {
         font-size: 16px;
         font-size: 1.6rem;
     }
-    h4, h5, h6 {
+    h3, h4, h5, h6 {
         font-size: 14px;
         font-size: 1.4rem;
+    }
+    /*--- layout ---*/
+    .column { padding: 0; }
+
+    /*--- forms ---*/
+    .column.two-thirds form .button {
+        width: 100%;
+    }
+    .column.two-thirds fieldset div {
+        margin: 10px 0;
     }
      /*-------------------------------
     HEADER
@@ -1489,6 +1609,9 @@ th {
     /*-- logo --*/
     .logo img {
         width: 50px;
+    }
+    .logo a p {
+        margin: 1rem;
     }
      /*-- menu --*/
     .menu-link, .menu-link:focus {
@@ -1501,16 +1624,19 @@ th {
     .reservation-banner p {
         text-align: center;
         padding: 5px 0;
+        width: 65%;
     }
     .reservation-banner p a {
         display: block;
         margin: 5px auto;
+        font-weight: 700;
     }
     /*-------------------------------
     MAIN CONTENT
     -------------------------------*/
     .separator {
         width: 171px;
+        margin: 1.5em auto;
     }
     
     /*--- main content ---*/
@@ -1526,15 +1652,17 @@ th {
     .hp-main-blocks .button {
         float: none;
         display: table;
+        width: 80%;
         margin: 0 auto;
+        text-align: center;
     }
     /*--- flickr feed ---*/
     .flickr-feed img {
-        width: 65px;
-        height: 65px;
+        width: 68px;
+        height: 68px;
     }
-    .flickr-image.no-9 {
-        display: none;
+    .flickr-feed li {
+        padding: 5px;
     }
     /*--- weather icons ---*/
     .w-icon {
@@ -1549,18 +1677,54 @@ th {
     .current-weather h3 {
         display: block;
     }
+    .weather-details li {
+        border-left: 1px solid #666666;
+    }
+    .weather-details li:first-child {
+        border-left: none;
+    }
     .weather-details li span {
         display: block;
     }
+    .forecast-weather li span:after {
+        display: none;
+    }
     .forecast-weather li, .forecast-weather li:first-child {
-        width: 100%;
+        width: 33.3%;
         border-left: none;
-        padding: 5px 10px;
+        padding: 5px;
+        border-left: 1px solid #666666;
+    }
+    .forecast-weather li:first-child {
+        border-left: none;
     }
     .forecast-weather li figure {
-        margin: 0 10px 0 30px;
+        margin: 0 10px 0 0;
     }
-
+    /*-------------------------------
+    INFOS PAGE
+    -------------------------------*/
+    .direction-form input, .direction-form .button {
+        display: table;
+        width: 100%;
+    }
+    /*-------------------------------
+    BOOKING PAGE 
+    -------------------------------*/
+    .column.two-thirds form label {
+        display: inline;
+    }
+    .booking-layout fieldset {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 10px 0;
+    }
+    .booking-layout legend {
+        font-size: 14px;
+        font-size: 1.4rem;
+        padding: 0 10px 0 0;
+    }
     /*-------------------------------
     FOOTER
     -------------------------------*/
@@ -1570,10 +1734,9 @@ th {
     }
 }
 
-/* Custom, iPhone Retina 20em (320px) */ 
-@media only screen and (max-width : 20em) {
-    
-}
+/* Custom, iPhone Retina 20em (320px)  
+@media only screen and (max-width : 20em) {   
+}*/
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
